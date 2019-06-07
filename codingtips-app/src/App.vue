@@ -1,13 +1,19 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <!-- <router-view/> -->
+    <Tips></Tips>
   </div>
 </template>
 
 <script>
+import Tips from '@/components/Tips.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Tips
+  }
 }
 </script>
 
