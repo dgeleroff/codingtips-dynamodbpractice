@@ -3,16 +3,19 @@
     <img src="./assets/logo.png">
     <!-- <router-view/> -->
     <Tips></Tips>
+    <add-tip></add-tip>
   </div>
 </template>
 
 <script>
 import Tips from '@/components/Tips.vue'
+import AddTip from '@/components/AddTip.vue'
 
 export default {
   name: 'App',
   components: {
-    Tips
+    Tips,
+    AddTip
   }
 }
 </script>
