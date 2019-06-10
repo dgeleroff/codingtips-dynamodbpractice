@@ -1,5 +1,5 @@
 <template>
-  <div class="tips">
+  <div class="tips-table">
     <table>
       <tr>
         <th>Date</th>
@@ -17,30 +17,20 @@
 </template>
 
 <script>
-  import axios from 'axios'
-
   export default {
-    name: "tips",
-    data () {
-      return {
-          dbScan: []
+    name: "tips-table",
+    // data () {
+    //   return {
+    //       dbScan: []
+    //   }
+    // },
+    props: {
+      dbScan: {
+        type: Array,
+        required:true
       }
     },
-    created() {
-      const client = axios.create({
-        baseURL: 'https://laux4mb483.execute-api.us-east-1.amazonaws.com/default/tips'
-      })
 
-      client.get('/')
-        .then((response) => {
-          // console.log(response.data)
-          this.dbScan = response.data.Items
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-
-    },
     methods: {
       getHumanDate(epochDate){
         var date = new Date(0);

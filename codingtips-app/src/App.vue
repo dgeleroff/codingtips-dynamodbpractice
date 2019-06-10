@@ -2,20 +2,47 @@
   <div id="app">
     <img src="./assets/logo.png">
     <!-- <router-view/> -->
-    <Tips></Tips>
-    <add-tip></add-tip>
+    <tips-table v-bind:dbScan='dbScan'></tips-table>
+    <add-tip v-on:add:tip="addTipToTable"></add-tip>
   </div>
 </template>
 
 <script>
-import Tips from '@/components/Tips.vue'
+import axios from 'axios'
+
+import TipsTable from '@/components/TipsTable.vue'
 import AddTip from '@/components/AddTip.vue'
 
 export default {
   name: 'App',
   components: {
-    Tips,
+    TipsTable,
     AddTip
+  },
+  data() {
+    return {
+      dbScan: []
+    }
+  },
+  created: function() {
+      const client = axios.create({
+        baseURL: 'https://laux4mb483.execute-api.us-east-1.amazonaws.com/default/tips'
+      })
+
+      client.get('/')
+        .then((response) => {
+          // console.log(response.data)
+          this.dbScan = response.data.Items
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+  },
+  methods: {
+    addTipToTable(tip){
+        console.log("Hey from Apps.vue!\n Tip is: ");
+        console.log(tip);
+    }
   }
 }
 </script>

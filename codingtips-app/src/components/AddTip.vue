@@ -44,6 +44,8 @@
                     .then((response) => {
                         console.log("got this in response: ")
                         console.log(response);
+                        this.$emit('add:tip', this.postObj);
+                        console.log("Just emitted and about to clear");
                         this.postObj.author = "";
                         this.postObj.tip = "";
                         this.postObj.category = "";
