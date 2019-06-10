@@ -34,6 +34,7 @@
     methods: {
       getHumanDate(epochDate){
         var date = new Date(0);
+        console.log("epochDate: " + epochDate);
         var strDate = epochDate.toString();
         if(strDate.length > 10){
           // console.log("about to trim " + strDate);

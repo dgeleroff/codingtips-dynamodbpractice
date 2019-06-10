@@ -42,6 +42,8 @@ export default {
     addTipToTable(tip){
         console.log("Hey from Apps.vue!\n Tip is: ");
         console.log(tip);
+        tip.date = new Date().getTime();
+        this.dbScan.push(tip);
     }
   }
 }
