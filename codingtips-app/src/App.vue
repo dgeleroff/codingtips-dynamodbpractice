@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="row">
-        <tips-table v-bind:dbScan='dbScan'></tips-table>
+        <add-tip></add-tip>
       </div>
     </div>
     <br/>
