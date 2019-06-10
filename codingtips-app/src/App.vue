@@ -2,9 +2,19 @@
   <div id="app">
     <img src="./assets/logo.png">
     <!-- <router-view/> -->
-    <tips-table v-bind:dbScan='dbScan'></tips-table>
+    <div class="container">
+      <div class="row">
+        <div class="col col--md--8">
+          <tips-table v-bind:dbScan='dbScan'></tips-table>
+        </div>
+        <div class="col col--md--4">
+          <div class="add-tip card card--shadow-depth-3">
+            <add-tip v-on:add:tip="addTipToTable"></add-tip>
+          </div>
+        </div>
+      </div>
+    </div>
     <br/>
-    <add-tip v-on:add:tip="addTipToTable"></add-tip>
   </div>
 </template>
 
@@ -50,13 +60,32 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+@import '~@causeway/core/dist/spa.scss';
+@import '~@causeway/core/dist/base/breakpoints';
+@import "~@causeway/core/dist/utilities/_variables.scss";
+@import "~@causeway/core/dist/utilities/_helpers.scss";
+@import "~@causeway/core/dist/base/_icon_backgrounds.scss";
+@import "~@causeway/core/dist/base/_breakpoints.scss";
+@import "~@causeway/core/dist/base/_buttons.scss";
+@import '~@causeway/core/dist/base/display';
+@import '~@causeway/core/dist/base/icons';
+@import '~@causeway/core/dist/base/lists';
+@import "~@causeway/core/dist/base/_tables.scss";
+@import "~@causeway/core/dist/base/_forms.scss";
+@import "~@causeway/core/dist/base/_grid.scss";
+@import "~@causeway/core/dist/blocks/_card.scss";
+
+// #app {
+//   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   text-align: center;
+//   color: #2c3e50;
+//   margin-top: 60px;
+// }
+
+.add-tip{
+  padding: 10px;
 }
 </style>

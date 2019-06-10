@@ -5,18 +5,25 @@
             <input 
                 v-model="postObj.author"
                 type="text"
+                class="fc--50"
+                required
             />
+            <br>
             <label>Category:</label>
             <input 
                 v-model="postObj.category"
                 type="text"
+                class="fc--50"
+                required
             />
+            <br>
             <label>Tip:</label>
             <input 
                 v-model="postObj.tip"
                 type="text"
+                required
             />
-            <button>Submit</button>
+            <button class="button button--primary">Submit</button>
         </form>
         <!-- <button v-on:click="postNewTip">Post</button> -->
     </div>
@@ -61,3 +68,7 @@
 
     }
 </script>
+
+<style>
+
+</style>
