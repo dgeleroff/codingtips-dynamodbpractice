@@ -8,7 +8,6 @@
       </tr>
       <tr v-for="tips in dbScan" v-bind:key="tips.date">
         <td>{{getHumanDate(tips.date)}}</td>
-        <!-- <td>{{tips.date}}</td> -->
         <td>{{tips.author}}</td>
         <td>{{tips.tip}}</td>
       </tr>
@@ -19,11 +18,6 @@
 <script>
   export default {
     name: "tips-table",
-    // data () {
-    //   return {
-    //       dbScan: []
-    //   }
-    // },
     props: {
       dbScan: {
         type: Array,
@@ -33,18 +27,11 @@
 
     methods: {
       getHumanDate(epochDate){
-        var date = new Date(0);
-        console.log("epochDate: " + epochDate);
-        var strDate = epochDate.toString();
-        if(strDate.length > 10){
-          // console.log("about to trim " + strDate);
-          strDate.slice(0,11);
-          // console.log("trimmed " + strDate);
-          epochDate = parseInt(strDate, 10);
-        }
-        // console.log(epochDate);
-        date.setUTCSeconds(epochDate)
-        var humanDate = (date.getDate()+"/"+date.getDay()+"/"+date.getFullYear());
+        var date = new Date(epochDate);
+        console.log(date);
+        console.log("getDate: "+date.getDate());
+        console.log("getMonth: "+date.getMonth());
+        var humanDate = ((date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear());
         return humanDate;
       }
     }

@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <!-- <router-view/> -->
     <tips-table v-bind:dbScan='dbScan'></tips-table>
+    <br/>
     <add-tip v-on:add:tip="addTipToTable"></add-tip>
   </div>
 </template>
