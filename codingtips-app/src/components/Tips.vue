@@ -46,12 +46,12 @@
         var date = new Date(0);
         var strDate = epochDate.toString();
         if(strDate.length > 10){
-          console.log("about to trim " + strDate);
+          // console.log("about to trim " + strDate);
           strDate.slice(0,11);
-          console.log("trimmed " + strDate);
+          // console.log("trimmed " + strDate);
           epochDate = parseInt(strDate, 10);
         }
-        console.log(epochDate);
+        // console.log(epochDate);
         date.setUTCSeconds(epochDate)
         var humanDate = (date.getDate()+"/"+date.getDay()+"/"+date.getFullYear());
         return humanDate;
