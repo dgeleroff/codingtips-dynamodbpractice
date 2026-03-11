@@ -16,7 +16,7 @@
   "dependencies": {
     "@causeway/core": "git+https://github.com/infotechfl/causeway-core.git",
     "@webcomponents/webcomponentsjs": "^2.2.10",
-    "axios": "^0.19.0",
+    "axios": "^1.13.5",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
